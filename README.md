@@ -1,4 +1,4 @@
-# angularjs-webpack
+# myRetail Application
 
 [![Dependency Status](https://david-dm.org/preboot/angularjs-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angularjs-webpack/dev-status.svg)](https://david-dm.org/preboot/angularjs-webpack#info=devDependencies)
 
@@ -36,7 +36,7 @@ $ npm install
 $ npm start
 ```
 
-go to [http://localhost:8080](http://localhost:8080) in your browser.
+go to [http://localhost:7000](http://localhost:7000) in your browser.
 
 # Table of Contents
 
@@ -69,7 +69,7 @@ After you have installed all dependencies you can now run the app with:
 npm start
 ```
 
-It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:8080`.
+It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:7000`.
 
 ## Developing
 

@@ -1,4 +1,6 @@
 import angular from 'angular';
+import jquery from 'jquery';
+import bootstrap from 'bootstrap';
 
 import '../scss/app-styles.scss';
 
