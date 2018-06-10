@@ -123,13 +123,22 @@ module.exports = function makeWebpackConfig() {
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'file-loader'
-    }, {
+    },
+    {                                                                        
+      test: /\.json$/, 
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    }, 
+    {
       // HTML LOADER
       // Reference: https://github.com/webpack/raw-loader
       // Allow loading html through js
       test: /\.html$/,
       loader: 'raw-loader'
-    }]
+    }                        
+   ]
   };
 
   // ISTANBUL LOADER

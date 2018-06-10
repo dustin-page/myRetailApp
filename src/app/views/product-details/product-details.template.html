@@ -1,5 +1,27 @@
-<div class="jumbotron">
-    <h1>Hello, {{pd.name}}</h1>
+<div id="product-title" class="jumbotron">
+
+    <h1>{{pd.product.title}}</h1>
   </div>
   
   <button class="btn btn-primary" ng-click="pd.changeName()">Change</button>
+
+
+<div class="container">
+        <div class="row">
+                <div class="col-md">
+                    <h1 id="product-title">
+                            {{pd.product.title}}
+                    </h1>
+                    <div id="product-image-container">
+                        <img ng-src="{{pd.product.Images[0].PrimaryImage[0].image}}" alt="">
+                    </div>
+                    <div id="product-image-magnifier">
+
+                    </div>
+                    <div id="produc-image-carousel-container">
+                        
+                    </div>
+                </div>
+                <div class="col-md"></div>
+        </div>
+</div>

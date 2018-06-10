@@ -5,8 +5,10 @@ import bootstrap from 'bootstrap';
 import uirouter from 'angular-ui-router';
 //Add routing
 import routing from './app.config';
-import productDetails from './views/product-details';
 
+import productDetails from './views/product-details';
+import '../app/data/item-data.json';
+ 
 import '../scss/app-styles.scss';
 
 /*

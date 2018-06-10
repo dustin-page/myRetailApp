@@ -6,6 +6,11 @@ export default function routes($stateProvider) {
       url: '/',
       template: require('./product-details.template.html'),
       controller: 'ProductDetailsController',
-      controllerAs: 'pd'
+      controllerAs: 'pd',
+      resolve: {
+        itemDetails: ['itemDetailsData', (itemDetailsData) => {
+          return itemDetailsData.getItemDetails();
+        }]
+      }
     });
 }
