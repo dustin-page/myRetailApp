@@ -7,7 +7,7 @@ import ProductDetailsController from './product-details.controller';
 import itemDetailsData from '../../shared/services/item-details-data.service';
 
 import './product-details.scss';
- 
+  
 /*
 Return the name of the module (external modules always return their name)
 */

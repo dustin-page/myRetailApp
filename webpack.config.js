@@ -122,10 +122,13 @@ module.exports = function makeWebpackConfig() {
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file-loader'
+      loader: 'file-loader',
+      options: { 
+        name: 'images/[hash]-[name].[ext]'
+    } 
     },
     {                                                                        
-      test: /\.json$/, 
+      test: /\.json$/,  
       loader: 'file-loader',
       options: {
         name: '[name].[ext]'
@@ -133,14 +136,13 @@ module.exports = function makeWebpackConfig() {
     }, 
     {
       // HTML LOADER
-      // Reference: https://github.com/webpack/raw-loader
+      // Reference: https://www.npmjs.com/package/html-loader
       // Allow loading html through js
       test: /\.html$/,
-      loader: 'raw-loader'
+      loader: 'html-loader'
     }                        
    ]
   };
-
   // ISTANBUL LOADER
   // https://github.com/deepsweet/istanbul-instrumenter-loader
   // Instrument JS files with istanbul-lib-instrument for subsequent code coverage reporting
