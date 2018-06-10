@@ -1,40 +1,85 @@
 <div id="product-title" class="jumbotron">
 
     <h1>{{pd.product.title}}</h1>
-  </div>
-  
-  <button class="btn btn-primary" ng-click="pd.changeName()">Change</button>
+</div>
+
+<button class="btn btn-primary" ng-click="pd.changeName()">Change</button>
 
 
 <div class="container">
-        <div class="row">
-                <div class="col-md-6">
-                    <h1 id="product-title">
-                            {{pd.product.title}}
-                    </h1>
-                    <div id="product-image-container">
-                            <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false", fade="true", as-nav-for=".carousel-nav" data="pd.product.Images[0].AlternateImages">
-                                    <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
-                                            <img class="product-carousel-main-image mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
-                                          </div>
-                                  </slick>
+    <div class="row">
+        <div class="col-md-6">
+            <h1 id="product-title">
+                {{pd.product.title}}
+            </h1>
+            <div id="product-image-container">
+                <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false" , fade="true" , as-nav-for=".carousel-nav"
+                    data="pd.product.Images[0].AlternateImages">
+                    <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
+                        <img class="product-carousel-main-image mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
                     </div>
-                    <div id="product-image-magnifier">
+                </slick>
+            </div>
+            <div id="product-image-magnifier">
 
+            </div>
+            <div id="product-carousel-container">
+                <slick class="carousel-nav mx-auto" init-onload="true" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true"
+                    center-padding="0px" focus-on-select="true" as-nav-for=".carousel-for" , data="pd.product.Images[0].AlternateImages">
+                    <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
+                        <img class="product-carousel-thumbnail mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
                     </div>
-                    <div id="product-carousel-container">
-                            <slick class="carousel-nav mx-auto" init-onload="true" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true" center-padding="0px" focus-on-select="true" as-nav-for=".carousel-for", data="pd.product.Images[0].AlternateImages">
-                                    <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
-                                            <img class="product-carousel-thumbnail mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
-                                          </div>
-                                  </slick>
-                    </div>
-                    <div id="product-ratings-container">
+                </slick>
+            </div>
+            <div id="product-review-container">
+                <div class="row">
+                    <div class="col-xs-6">
                         <img src="../../../images/rating-star-active.png" alt="">
-                        </div>
+                        <img src="../../../images/rating-star-active.png" alt="">
+                        <img src="../../../images/rating-star-active.png" alt="">
+                        <img src="../../../images/rating-star-active.png" alt="">
+                        <img src="../../../images/rating-star-active.png" alt="">
+                        <span class="product-ratings-overall">overall</span>
+                    </div>
+                    <div class="col-xs-6">
+                        <a class="view-all-reviews-link" href="#">view all 14 reviews</a>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    Column 2
+                <div class="row">
+                    <div class="col-xs-6">
+                                    <div class="card product-card" style="width: 18rem;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">PRO</h5>
+                                              <h6 class="card-subtitle mb-2 text-muted">most helpful 4-5 star review</h6>
+                                              <p class="card-text">
+
+                                                <div class="review-title">
+                                                        {{pd.product.CustomerReview[0].Pro[0].title}}
+
+                                                </div>
+                                                <div class="review-text">
+                                                        {{pd.product.CustomerReview[0].Pro[0].review}}
+                                                </div>
+
+                                                <div class="review-submitter-container">
+                                                    <span class="review-screenName">{{pd.product.CustomerReview[0].Pro[0].screenName}}</span> 
+                                                    <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Pro[0].datePosted)}}</span>
+                                                </div>
+
+                                              </p>
+                                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                          </div>
+                    </div>
                 </div>
+            </div>
+
+            
+
+
         </div>
+        <div class="col-md-6">
+            Column 2
+        </div>
+    </div>
 </div>
