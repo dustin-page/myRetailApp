@@ -1,3 +1,7 @@
+
+import ratingStarActive from '../../../images/rating-star-active.png';
+import ratingStar from '../../../images/rating-star.png';
+
 export default class ProductDetailsController {
     constructor(itemDetailsData, itemDetails, $filter) {
       
@@ -6,7 +10,7 @@ export default class ProductDetailsController {
       this.product = itemDetails;
       this.name = 'Product Details';
 
-      console.log('itemDetails', itemDetails);
+      this.maxStarRating = 5;
     }
   
     changeName() {
@@ -16,6 +20,14 @@ export default class ProductDetailsController {
     formatReviewDate(date) {
         let dateObj = new Date(date);
         return this.$filter('date')(dateObj.getTime(), "MMMM, d, yyyy");
+    }
+
+    getOverallStarRating(num){
+        return new Array(num);   
+    }
+
+    getRatingStarSrc(index, overallRating){
+        return index <= overallRating ? ratingStarActive : ratingStar;
     }
 
   }
