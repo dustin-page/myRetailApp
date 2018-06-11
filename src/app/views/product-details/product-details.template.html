@@ -1,10 +1,5 @@
-<div id="product-title" class="jumbotron">
-
-    <h1>{{pd.product.title}}</h1>
-</div>
 
 <button class="btn btn-primary" ng-click="pd.changeName()">Change</button>
-
 
 <div class="container">
     <div class="row">
@@ -13,7 +8,7 @@
                 {{pd.product.title}}
             </h1>
             <div id="product-image-container">
-                <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false" , fade="true" , as-nav-for=".carousel-nav"
+                <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false" fade="true" as-nav-for=".carousel-nav"
                     data="pd.product.Images[0].AlternateImages">
                     <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
                         <img class="product-carousel-main-image mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
@@ -25,7 +20,7 @@
             </div>
             <div id="product-carousel-container">
                 <slick class="carousel-nav mx-auto" init-onload="true" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true"
-                    center-padding="0px" focus-on-select="true" as-nav-for=".carousel-for" , data="pd.product.Images[0].AlternateImages">
+                    center-padding="0px" focus-on-select="true" as-nav-for=".carousel-for" prev-arrow="<button type='button' class='slick-prev'>Previous</button>" data="pd.product.Images[0].AlternateImages">
                     <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
                         <img class="product-carousel-thumbnail mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
                     </div>
@@ -34,20 +29,15 @@
             <div id="product-review-container">
                 <div class="row">
                     <div class="col-xs-6 overall-review-container">
-                            <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}" alt="">
-                        <!-- <img class="icon-star" src="../../../images/rating-star-active.png" alt="">
-                        <img class="icon-star" src="../../../images/rating-star-active.png" alt="">
-                        <img class="icon-star" src="../../../images/rating-star-active.png" alt="">
-                        <img class="icon-star" src="../../../images/rating-star-active.png" alt="">
-                        <img class="icon-star" src="../../../images/rating-star-active.png" alt=""> -->
-                        <span class="product-ratings-overall">overall</span>
+                            <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}" alt=""> 
+                            <span class="product-ratings-overall">overall</span>
                     </div>
                     <div class="col-xs-6">
                         <a class="view-all-reviews-link" href="#">view all 14 reviews</a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-sm-6">
                         <div class="card product-card pro" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">PRO</h5>
@@ -77,7 +67,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-6">
+                    <div class="col-sm-6">
                         <div class="card product-card con" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">CON</h5>
@@ -114,7 +104,34 @@
 
         </div>
         <div class="col-md-6">
-            Column 2
+            <div class="product-price-container">
+                    <span class="product-price">{{pd.product.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
+                    <span class="product-price-text">online price</span>
+            </div>
+            <div class="product-promotions-container">
+                <div class="product-promotion" ng-repeat="promotion in pd.product.Promotions track by $index">
+                    <img src="../../../images/icon-promo-tag.png" alt="">
+                    <span>{{promotion.promotionType}}</span>
+                </div>
+            </div>
+
+            <div class="product-order-form-container">
+                    <form name="orderForm">
+                            <div class="form-group">
+                              <div class="form-inline">
+                                    <div class="form-group input-quantity-container">
+                                            <label for="inputQuantity">quantity: </label>
+                                            <button class="btn-round btn-minus">-</button>
+                                            <input type="text" class="form-control" id="inputQuantity" placeholder="" value="1">
+                                            <button class="btn-round btn-plus">+</button>
+                                          </div>
+                              </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary">Pick Up In Store</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                          </form>
+            </div>
         </div>
     </div>
 </div>
