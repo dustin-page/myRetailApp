@@ -1,4 +1,5 @@
 import angular from 'angular';
+import angularSanitize from 'angular-sanitize';
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
@@ -41,7 +42,7 @@ const MODULE_NAME = 'app';
 /*
 The convention that all external modules are following is to simply export the name of the module, so uirouter here is the string 'uirouter'.
 */
-angular.module(MODULE_NAME, [uirouter, slick, productDetails])
+angular.module(MODULE_NAME, [uirouter, slick, angularSanitize, productDetails])
   // .directive('app', app)
   // .controller('AppCtrl', AppCtrl)
   .config(routing);

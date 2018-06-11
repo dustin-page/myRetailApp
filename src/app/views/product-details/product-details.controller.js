@@ -1,9 +1,8 @@
-
 import ratingStarActive from '../../../images/rating-star-active.png';
 import ratingStar from '../../../images/rating-star.png';
 
 export default class ProductDetailsController {
-    constructor(itemDetailsData, itemDetails, $filter) {
+    constructor(itemDetails, $filter, $sce) {
 
         this.$filter = $filter;
 
@@ -43,6 +42,19 @@ export default class ProductDetailsController {
         }
     }
 
+    isAvailableInStore(purchasingChannelCode) {
+        switch (parseInt(purchasingChannelCode, 10)) {
+            case 0:
+            case 2:
+                return true;
+                break;
+
+            default:
+                return false;
+                break;
+        }
+    }
+
 }
 
-ProductDetailsController.$inject = ['itemDetailsData', 'itemDetails', '$filter'];
+ProductDetailsController.$inject = ['itemDetails', '$filter', '$sce'];

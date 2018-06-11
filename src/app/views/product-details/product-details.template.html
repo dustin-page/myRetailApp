@@ -128,9 +128,33 @@
                               </div>
                             </div>
                             
-                            <button type="button" class="btn btn-primary">Pick Up In Store</button>
+                            <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Pick Up In Store</button>
                             <button ng-if="pd.isAvailableOnline(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Add To Cart</button>
                           </form>
+            </div>
+            <div class="product-returns-container">
+                    <div class="row">
+                            <div class="col">
+                              <span class="returns-title">returns</span>
+                             <span class="returns-divider"></span>
+                             <span class="returns-descripton">
+                                    This item must be returned within 30 days of the ship date. See <a href="#">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.
+                             </span>
+                                   
+                            </div>
+                          </div>
+            </div>
+            <div class="additional-option-buttons">
+                    <button type="button" class="btn btn-light">Add To Registry</button>
+                    <button type="button" class="btn btn-light">Add To List</button>
+                    <button type="button" class="btn btn-light">Share</button>
+            </div>
+            <div class="product-highlights-container">
+                <h2>product highlights</h2>
+                <ul class="product-highlights-list">
+                    <!-- <li ng-repeat="feature in pd.product.ItemDescription[0].features" ng-bind-html="feature"></li> -->
+                    <li ng-repeat="feature in pd.product.ItemDescription[0].features">{{ feature | stripHtmlFromText}}</li>
+                </ul>
             </div>
         </div>
     </div>
