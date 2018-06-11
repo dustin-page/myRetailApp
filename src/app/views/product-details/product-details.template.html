@@ -1,5 +1,5 @@
-
-<button class="btn btn-primary" ng-click="pd.changeName()">Change</button>
+<button class="btn btn-primary" ng-click="pd.changeName()">
+    Change</button>
 
 <div class="container">
     <div class="row">
@@ -8,15 +8,14 @@
                 {{pd.product.title}}
             </h1>
             <div id="product-image-container">
-                <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false" fade="true" as-nav-for=".carousel-nav"
-                    data="pd.product.Images[0].AlternateImages">
+                <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false" fade="true" as-nav-for=".carousel-nav" data="pd.product.Images[0].AlternateImages">
                     <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
                         <img class="product-carousel-main-image mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
                     </div>
                 </slick>
             </div>
-            <div id="product-image-magnifier">
-
+            <div id="product-image-magnifier-container" class="text-center">
+                <a href=""><img src="../../../images/icon-zoom-in.png" alt=""> view larger</a>
             </div>
             <div id="product-carousel-container">
                 <slick class="carousel-nav mx-auto" init-onload="true" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true"
@@ -29,8 +28,9 @@
             <div id="product-review-container">
                 <div class="row">
                     <div class="col-xs-6 overall-review-container">
-                            <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}" alt=""> 
-                            <span class="product-ratings-overall">overall</span>
+                        <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}"
+                            alt="">
+                        <span class="product-ratings-overall">overall</span>
                     </div>
                     <div class="col-xs-6">
                         <a class="view-all-reviews-link" href="#">view all 14 reviews</a>
@@ -42,11 +42,12 @@
                             <div class="card-body">
                                 <h5 class="card-title">PRO</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">most helpful 4-5 star review</h6>
-                                <p class="card-text">
+                                <div class="card-text">
 
-                                        <div class="col-xs-6 star-review-container">
-                                                    <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Pro[0].overallRating)}}" alt="">
-                                            </div>
+                                    <div class="col-xs-6 star-review-container">
+                                        <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Pro[0].overallRating)}}"
+                                            alt="">
+                                    </div>
 
                                     <div class="review-title">
                                         {{pd.product.CustomerReview[0].Pro[0].title}}
@@ -57,12 +58,12 @@
                                     </div>
 
                                     <div class="review-submitter-container">
-                                        <span class="review-screenName">{{pd.product.CustomerReview[0].Pro[0].screenName}}</span>
+                                        <a href="#" class="review-screenName">{{pd.product.CustomerReview[0].Pro[0].screenName}}</a>
                                         <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Pro[0].datePosted)}}</span>
                                     </div>
 
-                                </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -72,10 +73,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">CON</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">most helpful 1-2 star review</h6>
-                                <p class="card-text">
+                                <div class="card-text">
 
                                     <div class="col-xs-6 star-review-container">
-                                            <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Con[0].overallRating)}}" alt="">
+                                        <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Con[0].overallRating)}}"
+                                            alt="">
                                     </div>
 
                                     <div class="review-title">
@@ -87,12 +89,10 @@
                                     </div>
 
                                     <div class="review-submitter-container">
-                                        <span class="review-screenName">{{pd.product.CustomerReview[0].Con[0].screenName}}</span>
+                                        <a href="#" class="review-screenName">{{pd.product.CustomerReview[0].Con[0].screenName}}</a>
                                         <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Con[0].datePosted)}}</span>
                                     </div>
-
-                                </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,8 +105,8 @@
         </div>
         <div class="col-md-6">
             <div class="product-price-container">
-                    <span class="product-price">{{pd.product.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
-                    <span class="product-price-text">online price</span>
+                <span class="product-price">{{pd.product.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
+                <span class="product-price-text">online price</span>
             </div>
             <div class="product-promotions-container">
                 <div class="product-promotion" ng-repeat="promotion in pd.product.Promotions track by $index">
@@ -116,38 +116,47 @@
             </div>
 
             <div class="product-order-form-container">
-                    <form name="orderForm">
-                            <div class="form-group">
-                              <div class="form-inline">
-                                    <div class="form-group input-quantity-container">
-                                            <label for="inputQuantity">quantity: </label>
-                                            <button class="btn-round btn-minus">-</button>
-                                            <input type="text" class="form-control" id="inputQuantity" placeholder="" value="1">
-                                            <button class="btn-round btn-plus">+</button>
-                                          </div>
-                              </div>
+                <form name="orderForm">
+                    <div class="form-group">
+                        <div class="form-inline">
+                            <div class="form-group input-quantity-container">
+                                <label for="inputQuantity">quantity: </label>
+                                <button class="btn-round btn-minus">-</button>
+                                <input type="text" class="form-control" id="inputQuantity" placeholder="" value="1">
+                                <button class="btn-round btn-plus">+</button>
                             </div>
-                            
+                        </div>
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="col col-auto text-center">
                             <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Pick Up In Store</button>
+                            <br/><a class="btn-find-in-store" href="#">find in a store</a>
+                        </div>
+                        <div class="col col-auto">
                             <button ng-if="pd.isAvailableOnline(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Add To Cart</button>
-                          </form>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="product-returns-container">
-                    <div class="row">
-                            <div class="col">
-                              <span class="returns-title">returns</span>
-                             <span class="returns-divider"></span>
-                             <span class="returns-descripton">
-                                    This item must be returned within 30 days of the ship date. See <a href="#">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.
-                             </span>
-                                   
-                            </div>
-                          </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="returns-title">returns</span>
+                        <span class="returns-divider"></span>
+                        <span class="returns-descripton">
+                            This item must be returned within 30 days of the ship date. See
+                            <a href="#">return policy</a> for details. Prices, promotions, styles and availability may vary by store
+                            and online.
+                        </span>
+
+                    </div>
+                </div>
             </div>
             <div class="additional-option-buttons">
-                    <button type="button" class="btn btn-light">Add To Registry</button>
-                    <button type="button" class="btn btn-light">Add To List</button>
-                    <button type="button" class="btn btn-light">Share</button>
+                <button type="button" class="btn btn-light">Add To Registry</button>
+                <button type="button" class="btn btn-light">Add To List</button>
+                <button type="button" class="btn btn-light">Share</button>
             </div>
             <div class="product-highlights-container">
                 <h2>product highlights</h2>
