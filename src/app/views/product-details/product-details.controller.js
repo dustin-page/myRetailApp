@@ -4,17 +4,17 @@ import ratingStar from '../../../images/rating-star.png';
 
 export default class ProductDetailsController {
     constructor(itemDetailsData, itemDetails, $filter) {
-      
-      this.$filter = $filter;
 
-      this.product = itemDetails;
-      this.name = 'Product Details';
+        this.$filter = $filter;
 
-      this.maxStarRating = 5;
+        this.product = itemDetails;
+        this.name = 'Product Details';
+
+        this.maxStarRating = 5;
     }
-  
+
     changeName() {
-      this.name = 'angular-tips';
+        this.name = 'angular-tips';
     }
 
     formatReviewDate(date) {
@@ -22,14 +22,27 @@ export default class ProductDetailsController {
         return this.$filter('date')(dateObj.getTime(), "MMMM, d, yyyy");
     }
 
-    getOverallStarRating(num){
-        return new Array(num);   
+    getOverallStarRating(num) {
+        return new Array(num);
     }
 
-    getRatingStarSrc(index, overallRating){
+    getRatingStarSrc(index, overallRating) {
         return index <= overallRating ? ratingStarActive : ratingStar;
     }
 
-  }
+    isAvailableOnline(purchasingChannelCode) {
+        switch (parseInt(purchasingChannelCode, 10)) {
+            case 0:
+            case 1:
+                return true;
+                break;
 
-  ProductDetailsController.$inject = ['itemDetailsData', 'itemDetails', '$filter'];
+            default:
+                return false;
+                break;
+        }
+    }
+
+}
+
+ProductDetailsController.$inject = ['itemDetailsData', 'itemDetails', '$filter'];

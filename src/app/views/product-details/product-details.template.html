@@ -129,7 +129,7 @@
                             </div>
                             
                             <button type="button" class="btn btn-primary">Pick Up In Store</button>
-                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                            <button ng-if="pd.isAvailableOnline(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Add To Cart</button>
                           </form>
             </div>
         </div>
