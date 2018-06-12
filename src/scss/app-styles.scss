@@ -9,11 +9,13 @@ body {
 }
 
 h1, h2 {
-  color: $themeColor-Dark;
+  // color: $themeColor-Dark;
 }
 
 a {
-  color: #03A9F4;
+  // color: #000;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 main {

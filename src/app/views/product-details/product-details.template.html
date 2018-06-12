@@ -3,19 +3,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <h1 id="product-title">
+        <div class="col-md-6 text-center">
+            <h1 id="product-title" class="mb-5">
                 {{pd.product.title}}
             </h1>
-            <div id="product-image-container">
+            <div id="product-image-container" class="mb-5">
                 <slick class="carousel-for" init-onload="true" slides-to-show="1" arrows="false" fade="true" as-nav-for=".carousel-nav" data="pd.product.Images[0].AlternateImages">
                     <div class="carousel-item" ng-repeat="altImage in pd.product.Images[0].AlternateImages">
                         <img class="product-carousel-main-image mx-auto" ng-src="{{altImage.image}}" alt="Second slide">
                     </div>
                 </slick>
             </div>
-            <div id="product-image-magnifier-container" class="text-center">
-                <a href=""><img src="../../../images/icon-zoom-in.png" alt=""> view larger</a>
+            <div id="product-image-magnifier-container" class="text-center mb-3">
+                <a class="magnifier-link" href="#"><img src="../../../images/icon-zoom-in.png" alt=""> view larger</a>
             </div>
             <div id="product-carousel-container">
                 <slick class="carousel-nav mx-auto" init-onload="true" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true"
