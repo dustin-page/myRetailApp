@@ -44,6 +44,11 @@
     }
 }
 
+.slick-active.slick-center {
+    border-radius:3px;
+    border: 1px solid #999999;
+}
+
 .overall-review-container {
     .overall-review-stars-container {
         display: flex;
