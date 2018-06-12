@@ -1,26 +1,31 @@
+#product-title-container {
+    display: flex;
+    justify-content: center;
+}
+
 #product-title {
     font-size: 26px;
-    display:inline-block;
+    display: inline-block;
     text-align: center;
-    width:71%;
-  }
+    width: 71%;
+}
 
-  .magnifier-link {
-      font-size: 14px;
+.magnifier-link {
+    font-size: 14px;
     color: #666666;
-    font-weight:normal;
-  }
+    font-weight: normal;
+}
 
-  .slick-prev {
+.slick-prev {
     left: -40px;
     [dir="rtl"] & {
         left: auto;
         right: -40px;
     }
     &:before {
-        content: url('../../../images/icon-previous.png'); // <<<<<<<<
+        content: url('../../../images/icon-previous.png');
         [dir="rtl"] & {
-            content: url('../../../images/icon-next.png'); // <<<<<<<<
+            content: url('../../../images/icon-next.png');
         }
     }
 }
@@ -39,47 +44,139 @@
     }
 }
 
-  #product-carousel-container {
-    
-  }
-  .carousel-for {
-  }
-
-  .carousel-nav {
-    width: 203px;
-  }
-z
-  .product-carousel-main-image {
-    width:400px;
+.overall-review-container {
+    .overall-review-stars-container {
+        display: flex;
+        align-items: center;
+        padding-left: 1.2rem;
+    }
 }
 
-  .product-carousel-thumbnail {
-      width:61px;
-  }
+.product-ratings-overall-text {
+    padding-left: 3px;
+    font-size:14px;
+    font-weight: bold;
+}
 
-  .product-card {
-      background-color: #f6f5f5;
-  }
+.view-all-reviews-link {
+    font-size:14px;
+    font-weight: bold;
+}
 
-  .star-review-container {
-      .icon-star {
-          width:14px;
-      }
-  }
+#product-pro-con-container {
+    background-color: #f6f5f5;
+    >[class^='col-'] {
+        display: flex;
+        align-content: stretch;
+    }
+    .card {
+        border: none;
+        background-color: transparent;
 
-  .input-quantity-container {
+        .card-body {  
+            padding: 1.2rem;
+            padding-top:0.8rem; 
+            padding-bottom:0.9rem; 
+        }
+
+        .card-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom:0.3rem;
+        }
+        .card-subtitle {
+            font-size: 12px;
+            color: #7f7e7e;
+        }
+        .card-header {
+            padding-bottom: 0.4rem;
+            padding-top: 0;
+            border-bottom: 1px solid #cccccc;
+            margin-bottom:0.5rem;
+        }
+        &.pro {
+            .card-header {
+                padding-left: 0;
+                background-color: transparent;
+                padding-right: 1.2rem;
+            }
+            .card-body {
+                padding-right: 0;
+            }
+            .card-text {
+                padding-right: 1.2rem;
+            }
+        }
+        &.con {
+            .card-header {
+                background-color: transparent;
+                padding-left: 1.2rem;
+            }
+            .card-body {
+                padding-left: 0;
+            }
+            .card-text {
+                padding-left: 1.2rem;
+            }
+        }
+
+        .review-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .review-screen-name-link {
+            font-weight:normal;
+            color: #0066cc;
+        }
+
+
+    }
+    .review-divider-line {
+        // border-bottom: 1px solid #cccccc;
+        // padding-bottom:20px;
+    }
+}
+
+#product-carousel-container {}
+
+.carousel-for {}
+
+.carousel-nav {
+    width: 203px;
+}
+
+z .product-carousel-main-image {
+    width: 400px;
+}
+
+.product-carousel-thumbnail {
+    width: 61px;
+}
+
+.product-card {
+    background-color: #f6f5f5;
+}
+
+.star-review-container {
+    .icon-star {
+        width: 14px;
+    }
+}
+
+.input-quantity-container {
     border-radius: 2px;
     border: 1px solid #d3d2d2;
-  }
-
-.btn-round {
-    border:none;
-    border-radius:15px;
-    width:30px;
-    height:30px;
 }
 
-  #inputQuantity {
+.btn-round {
     border: none;
-      width:40px;
-  }
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+#inputQuantity {
+    border: none;
+    width: 40px;
+}

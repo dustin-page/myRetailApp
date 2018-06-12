@@ -1,1 +1,13 @@
 $theme-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+$font-size-base:              0.75rem; // Equivalent to 12px
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                #000;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%);
+$link-hover-decoration:     underline;
