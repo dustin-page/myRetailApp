@@ -44,12 +44,11 @@
     }
 }
 
-
 .carousel-item {
     // margin-left:10px;
     // margin-right:10px;
     padding: 3px;
-    border-radius:3px;
+    border-radius: 3px;
     border: 1px solid transparent;
 }
 
@@ -67,12 +66,12 @@
 
 .product-ratings-overall-text {
     padding-left: 3px;
-    font-size:14px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .view-all-reviews-link {
-    font-size:14px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -85,17 +84,15 @@
     .card {
         border: none;
         background-color: transparent;
-
-        .card-body {  
+        .card-body {
             padding: 1.2rem;
-            padding-top:0.8rem; 
-            padding-bottom:0.9rem; 
+            padding-top: 0.8rem;
+            padding-bottom: 0.9rem;
         }
-
         .card-title {
             font-size: 18px;
             text-transform: uppercase;
-            margin-bottom:0.3rem;
+            margin-bottom: 0.3rem;
         }
         .card-subtitle {
             font-size: 12px;
@@ -105,7 +102,7 @@
             padding-bottom: 0.4rem;
             padding-top: 0;
             border-bottom: 1px solid #cccccc;
-            margin-bottom:0.5rem;
+            margin-bottom: 0.5rem;
         }
         &.pro {
             .card-header {
@@ -132,34 +129,30 @@
                 padding-left: 1.2rem;
             }
         }
-
         .review-title {
             font-size: 16px;
             font-weight: bold;
         }
-
         .review-screen-name-link {
-            font-weight:normal;
+            font-weight: normal;
             color: #0066cc;
         }
-
-
     }
 }
 
 .product-price {
-    font-size:30px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .product-price-text {
-    font-size:12px;
+    font-size: 12px;
 }
 
 .product-promotions-container {
-    border-top:1px solid #ccc;
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding:15px 0;
+    padding: 15px 0;
 }
 
 .product-promotions-image {
@@ -167,31 +160,27 @@
 }
 
 .product-promotions-text {
-    font-size:18px;
+    font-size: 18px;
     color: #cc0000;
 }
 
 .product-order-form-container {
-    padding:25px 0;
-
+    padding: 25px 0;
     label {
-        font-size:14px;
+        font-size: 14px;
     }
-
     .btn {
-        font-size:18px;
-        text-transform: uppercase;
-      }
+        font-size: 18px;
+    }
 }
 
-.input-quantity-container  {
-    border-radius:3px;
+.input-quantity-container {
+    border-radius: 3px;
     border: 1px solid #d3d2d2;
-    padding:3px 12px;
-    width:100%;
-    display:flex;
+    padding: 3px 12px;
+    width: 100%;
+    display: flex;
     justify-content: space-between;
-
     .btn-round {
         background: none;
         color: inherit;
@@ -201,28 +190,53 @@
         cursor: pointer;
         outline: inherit;
     }
-
     input#inputQuantity {
         font-weight: bold;
-        font-size:18px;
+        font-size: 18px;
         border: none;
         width: 30px;
-        padding:0;
+        padding: 0;
         text-align: center;
     }
-
-    
-
 }
 
+.product-highlights-container {
+    .product-highlights-title {
+        font-size: 36px;
+    }
+    ul.product-highlights-list {
+        font-size: 14px;
+        list-style-position: inside;
+        padding-left: 0;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+}
 
+//Below CSS needs to be refactored into the above code
 
+.returns-title {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.returns-divider {
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+.returns-description {
+    font-size: 10px;
+    display: inline-block;
+}
 
 .carousel-nav {
     width: 203px;
 }
 
- .product-carousel-main-image {
+.product-carousel-main-image {
     width: 400px;
 }
 
