@@ -17,7 +17,8 @@
                 </slick>
             </div>
             <div id="product-image-magnifier-container" class="text-center mb-3">
-                <a class="magnifier-link" href="#"><img src="../../../images/icon-zoom-in.png" alt=""> view larger</a>
+                <a class="magnifier-link" href="#">
+                    <img src="../../../images/icon-zoom-in.png" alt=""> view larger</a>
             </div>
             <div id="product-carousel-container" class="mb-4">
                 <slick class="carousel-nav mx-auto" init-onload="true" infinite="true" slides-to-show="3" slides-to-scroll="1" center-mode="true"
@@ -27,14 +28,14 @@
                     </div>
                 </slick>
             </div>
-            <div id="product-review-container" >
+            <div id="product-review-container">
                 <div class="row mb-3">
                     <div class="col-6 overall-review-container">
                         <div class="overall-review-stars-container">
-                                <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}"
+                            <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}"
                                 alt="">
                             <span class="product-ratings-overall-text">overall</span>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-6 text-right">
                         <a class="view-all-reviews-link" href="#">view all 14 reviews</a>
@@ -44,10 +45,10 @@
                     <div class="col-6">
                         <div class="card product-card pro">
                             <div class="card-body">
-                                
+
                                 <div class="card-header">
-                                        <h5 class="card-title">PRO</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">most helpful 4-5 star review</h6>        
+                                    <h5 class="card-title">PRO</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">most helpful 4-5 star review</h6>
                                 </div>
 
                                 <div class="review-divider-line"></div>
@@ -74,7 +75,7 @@
                                     </div>
 
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -84,13 +85,13 @@
                             <div class="card-body">
 
                                 <div class="card-header">
-                                        <h5 class="card-title">CON</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">most helpful 1-2 star review</h6>
-                                        
+                                    <h5 class="card-title">CON</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">most helpful 1-2 star review</h6>
+
                                 </div>
-                                
+
                                 <div class="review-divider-line"></div>
-                                
+
                                 <div class="card-text">
 
                                     <div class="col-xs-6 star-review-container">
@@ -122,36 +123,51 @@
 
         </div>
         <div class="col-md-6">
-            <div class="product-price-container">
+            <div class="product-price-container mb-4">
                 <span class="product-price">{{pd.product.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
                 <span class="product-price-text">online price</span>
             </div>
             <div class="product-promotions-container">
-                <div class="product-promotion" ng-repeat="promotion in pd.product.Promotions track by $index">
-                    <img src="../../../images/icon-promo-tag.png" alt="">
-                    <span>{{promotion.promotionType}}</span>
+                <div class="row no-gutters product-promotion" ng-repeat="promotion in pd.product.Promotions track by $index">
+                    <div class="col-auto">
+                        <img class="product-promotions-image" src="../../../images/icon-promo-tag.png" alt="">
+                    </div>
+                    <div class="col">
+                        <span class="product-promotions-text">{{promotion.promotionType}}</span>
+                    </div>
                 </div>
             </div>
 
             <div class="product-order-form-container">
                 <form name="orderForm">
-                    <div class="form-group">
-                        <div class="form-inline">
-                            <div class="form-group input-quantity-container">
-                                <label for="inputQuantity">quantity: </label>
-                                <button class="btn-round btn-minus">-</button>
-                                <input type="text" class="form-control" id="inputQuantity" placeholder="" value="1">
-                                <button class="btn-round btn-plus">+</button>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="row no-gutters">
-                        <div class="col col-auto text-center">
-                            <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Pick Up In Store</button>
-                            <br/><a class="btn-find-in-store" href="#">find in a store</a>
+                        <div class="col mb-2">
+                            <div class="form-group">
+                                <div class="form-inline">
+                                    <div class="form-group input-quantity-container">
+                                        <label for="inputQuantity">quantity: </label>
+                                        <div class="input-quantity-button-container">
+                                            <button class="btn-round btn-minus">
+                                                <img src="../../../images/btn-minus.png" alt="">
+                                            </button>
+                                            <input type="text" class="form-control" id="inputQuantity" placeholder="" value="1">
+                                            <button class="btn-round btn-plus">
+                                                <img src="../../../images/btn-plus.png" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col col-auto">
+                        <div class="col"></div>
+                        <div class="w-100"></div>
+                        <div class="col text-center">
+                            <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Pick Up In Store</button>
+                            <br/>
+                            <a class="btn-find-in-store" href="#">find in a store</a>
+                        </div>
+                        <div class="col">
                             <button ng-if="pd.isAvailableOnline(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Add To Cart</button>
                         </div>
                     </div>
