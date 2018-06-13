@@ -163,12 +163,11 @@
                         <div class="col"></div>
                         <div class="w-100"></div>
                         <div class="col text-center">
-                            <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Pick Up In Store</button>
-                            <br/>
+                            <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-secondary btn-block btn-lg">Pick Up In Store</button>
                             <a class="btn-find-in-store" href="#">find in a store</a>
                         </div>
                         <div class="col">
-                            <button ng-if="pd.isAvailableOnline(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary">Add To Cart</button>
+                            <button ng-if="pd.isAvailableOnline(pd.product.purchasingChannelCode)" type="button" class="btn btn-primary btn-block btn-lg ml-2">Add To Cart</button>
                         </div>
                     </div>
                 </form>
