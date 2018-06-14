@@ -7,6 +7,10 @@ export default class ProductDetailsController {
         this.$filter = $filter;
 
         this.product = itemDetails;
+        /* itemDetailsData.getItemDetails()
+        .then((response) => {
+            this.product = response;
+        }); */
         this.name = 'Product Details';
 
         this.maxStarRating = 5;

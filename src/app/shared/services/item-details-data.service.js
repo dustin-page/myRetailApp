@@ -18,5 +18,5 @@ class ItemDetailsData {
 }
 
 export default angular.module('services.item-details-data', [])
-  .service('itemDetailsData', ItemDetailsData)
+  .service('itemDetailsData', ['$http', ItemDetailsData])
   .name; 
