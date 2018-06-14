@@ -1,9 +1,6 @@
-<button class="btn btn-primary" ng-click="pd.changeName()">
-    Change</button>
-
-<div class="container">
+<div id="product-detail-container" class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <div id="product-title-container" class="mb-4">
                 <h1 id="product-title">
                     {{pd.product.title}}
@@ -28,101 +25,8 @@
                     </div>
                 </slick>
             </div>
-            <div id="product-review-container">
-                <div class="row mb-3">
-                    <div class="col-6 overall-review-container">
-                        <div class="overall-review-stars-container">
-                            <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}"
-                                alt="">
-                            <span class="product-ratings-overall-text">overall</span>
-                        </div>
-                    </div>
-                    <div class="col-6 text-right">
-                        <a class="view-all-reviews-link" href="#">view all 14 reviews</a>
-                    </div>
-                </div>
-                <div id="product-pro-con-container" class="row no-gutters">
-                    <div class="col-6">
-                        <div class="card product-card pro">
-                            <div class="card-body">
-
-                                <div class="card-header">
-                                    <h5 class="card-title">PRO</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">most helpful 4-5 star review</h6>
-                                </div>
-
-                                <div class="review-divider-line"></div>
-
-                                <div class="card-text">
-
-                                    <div class="col-xs-6 star-review-container">
-                                        <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Pro[0].overallRating)}}"
-                                            alt="">
-                                    </div>
-
-                                    <div class="review-title">
-                                        {{pd.product.CustomerReview[0].Pro[0].title}}
-
-                                    </div>
-
-                                    <div class="review-text">
-                                        {{pd.product.CustomerReview[0].Pro[0].review}}
-                                    </div>
-
-                                    <div class="review-submitter-container">
-                                        <a href="#" class="review-screen-name-link">{{pd.product.CustomerReview[0].Pro[0].screenName}}</a>
-                                        <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Pro[0].datePosted)}}</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6">
-                        <div class="card product-card con">
-                            <div class="card-body">
-
-                                <div class="card-header">
-                                    <h5 class="card-title">CON</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">most helpful 1-2 star review</h6>
-
-                                </div>
-
-                                <div class="review-divider-line"></div>
-
-                                <div class="card-text">
-
-                                    <div class="col-xs-6 star-review-container">
-                                        <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Con[0].overallRating)}}"
-                                            alt="">
-                                    </div>
-
-                                    <div class="review-title">
-                                        {{pd.product.CustomerReview[0].Con[0].title}}
-
-                                    </div>
-                                    <div class="review-text">
-                                        {{pd.product.CustomerReview[0].Con[0].review}}
-                                    </div>
-
-                                    <div class="review-submitter-container">
-                                        <a href="#" class="review-screen-name-link">{{pd.product.CustomerReview[0].Con[0].screenName}}</a>
-                                        <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Con[0].datePosted)}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <div class="product-price-container mb-4">
                 <span class="product-price">{{pd.product.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
                 <span class="product-price-text">online price</span>
@@ -144,7 +48,7 @@
                     <div class="row no-gutters">
                         <div class="col mb-2">
                             <div class="form-group">
-                                <div class="form-inline">
+                                <div class="form-inline form-inline-container">
                                     <div class="form-group input-quantity-container">
                                         <label for="inputQuantity">quantity: </label>
                                         <div class="input-quantity-button-container">
@@ -160,7 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col"></div>
+                        <div class="col d-none d-md-block"></div>
                         <div class="w-100"></div>
                         <div class="col text-center">
                             <button ng-if="pd.isAvailableInStore(pd.product.purchasingChannelCode)" type="button" class="btn btn-secondary btn-block btn-lg btn-shadow">Pick Up In Store</button>
@@ -199,5 +103,99 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+                <div id="product-review-container">
+                        <div class="row mb-3">
+                            <div class="col-6 overall-review-container">
+                                <div class="overall-review-stars-container">
+                                    <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].consolidatedOverallRating)}}"
+                                        alt="">
+                                    <span class="product-ratings-overall-text">overall</span>
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a class="view-all-reviews-link" href="#">view all 14 reviews</a>
+                            </div>
+                        </div>
+                        <div id="product-pro-con-container" class="row no-gutters">
+                            <div class="col-6">
+                                <div class="card product-card pro">
+                                    <div class="card-body">
+        
+                                        <div class="card-header">
+                                            <h5 class="card-title">PRO</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">most helpful 4-5 star review</h6>
+                                        </div>
+        
+                                        <div class="review-divider-line"></div>
+        
+                                        <div class="card-text">
+        
+                                            <div class="col-xs-6 star-review-container">
+                                                <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Pro[0].overallRating)}}"
+                                                    alt="">
+                                            </div>
+        
+                                            <div class="review-title">
+                                                {{pd.product.CustomerReview[0].Pro[0].title}}
+        
+                                            </div>
+        
+                                            <div class="review-text">
+                                                {{pd.product.CustomerReview[0].Pro[0].review}}
+                                            </div>
+        
+                                            <div class="review-submitter-container">
+                                                <a href="#" class="review-screen-name-link">{{pd.product.CustomerReview[0].Pro[0].screenName}}</a>
+                                                <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Pro[0].datePosted)}}</span>
+                                            </div>
+        
+                                        </div>
+        
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-6">
+                                <div class="card product-card con">
+                                    <div class="card-body">
+        
+                                        <div class="card-header">
+                                            <h5 class="card-title">CON</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">most helpful 1-2 star review</h6>
+        
+                                        </div>
+        
+                                        <div class="review-divider-line"></div>
+        
+                                        <div class="card-text">
+        
+                                            <div class="col-xs-6 star-review-container">
+                                                <img class="icon-star" ng-repeat="i in pd.getOverallStarRating(pd.maxStarRating) track by $index" ng-src="{{pd.getRatingStarSrc($index+1, pd.product.CustomerReview[0].Con[0].overallRating)}}"
+                                                    alt="">
+                                            </div>
+        
+                                            <div class="review-title">
+                                                {{pd.product.CustomerReview[0].Con[0].title}}
+        
+                                            </div>
+                                            <div class="review-text">
+                                                {{pd.product.CustomerReview[0].Con[0].review}}
+                                            </div>
+        
+                                            <div class="review-submitter-container">
+                                                <a href="#" class="review-screen-name-link">{{pd.product.CustomerReview[0].Con[0].screenName}}</a>
+                                                <span class="review-date">{{pd.formatReviewDate(pd.product.CustomerReview[0].Con[0].datePosted)}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <div class="col-sm"></div>
     </div>
 </div>
